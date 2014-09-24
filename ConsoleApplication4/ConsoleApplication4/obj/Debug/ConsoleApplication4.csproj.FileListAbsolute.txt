@@ -10,3 +10,9 @@ C:\git\projects\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\C
 C:\git\projects\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
 C:\git\projects\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.csprojResolveAssemblyReference.cache
 C:\git\projects\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.pdb
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe.config
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.exe
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.pdb
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.exe
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\bin\Debug\ConsoleApplication4.pdb
+P:\git\1dv402-kh222mj-1-3-godtycklig-lonerevision\ConsoleApplication4\ConsoleApplication4\obj\Debug\ConsoleApplication4.csprojResolveAssemblyReference.cache
