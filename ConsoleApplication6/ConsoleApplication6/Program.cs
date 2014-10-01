@@ -7,40 +7,70 @@ namespace ConsoleApplication4
 {
     class Program
     {
-        private static int ReadInt(string prompt)
+        static void Main(string[] args)
         {
-            Console.Write(prompt);
-            int input = int.Parse(Console.ReadLine());
-            return input;                                
+            //För omstart
+            do
+            {
+                    Console.Clear();
+                    //Läs in hur många löner som ska matas in
+                    int antalLoner = ReadInt("Ange antal löner att mata in: ");
+                    Console.WriteLine(); //blank rad
+
+                    //Kolla om antalLoner ett rimligt tal      
+                    if (antalLoner <= 2)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.WriteLine("FEL! Du måste mata in minst tre löner för att kunna göra en beräkning!");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine();
+                    }
+                    //Beräkna och presentera löner
+                    else
+                    {
+                        ProcessSalaries(antalLoner);
+                    }                
+            
+            //Avsluta eller en ny beräkning
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Tryck tangent för ny beräkning - Esc avslutar");
+            Console.BackgroundColor = ConsoleColor.Black;
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
         }
-        private static void ProcessSalaries(ref int antalLoner)
+        private static int ReadInt(string prompt)
+        {   
+            while (true) 
+            {   
+                try 
+                {
+                    Console.Write(prompt);
+                    int input = int.Parse(Console.ReadLine());
+                    return input;
+                }            
+                catch
+                {
+                    Console.WriteLine();
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("FEL! Det du angav kunde inte tolkas som ett heltal");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine();
+                }
+            }                 
+        }
+        private static void ProcessSalaries(int antalLoner)
         {
             //Deklaration av variabel
             int loop = 0;
-            
+
             //Deklarera arrayer
             int[] arrayLoner = new int[antalLoner];
             int[] arrayLonerClone = new int[antalLoner];
-
-            while (true)
-            {
-                try
-                {
-                //Läs in lönerna och placera dem i array                
-                while (loop < antalLoner)
-                {                   
-                    Console.Write("Ange lön nummer " + (loop + 1) + ": ");
-                    arrayLoner[loop] = Convert.ToInt32(Console.ReadLine());
-                    loop++;
-                }
-                break;
-                }
-                catch
-                {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FEL! Skriv in en lön du vill beräkna.");
-                    Console.BackgroundColor = ConsoleColor.Black;
-                }
+            
+            //Läs in lönerna och placera dem i array                
+            for (int i = 0; i < antalLoner; i++)
+			{
+                int test = ReadInt("Ange lön nummer " + (i + 1) + ": ");                
+                arrayLoner[i] = Convert.ToInt32(test);
             }
             //Grafik
             Console.WriteLine(); //blank rad
@@ -84,62 +114,6 @@ namespace ConsoleApplication4
                 col++;
             }
             Console.WriteLine();//Blank rad
-        }
-        private static void Restart() 
-        {
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("Tryck tangent för ny beräkning - Esc avslutar");
-            Console.BackgroundColor = ConsoleColor.Black;
-            var key = Console.ReadKey();
-            if (key.Key == ConsoleKey.Escape)
-            {
-                Environment.Exit(0);
-            }
-            Console.WriteLine();
-        }
-        static void Main(string[] args)
-        {
-            //För omstart
-            while (true)
-            {
-            while (true)
-            {
-                try
-                {
-                    //Läs in hur många löner som ska matas in
-                    int antalLoner = ReadInt("Ange antal löner att mata in: ");
-                    Console.WriteLine(); //blank rad
-
-                    //Kolla om antalLoner ett rimligt tal      
-                    if (antalLoner <= 2)
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.WriteLine("FEL! Du måste mata in minst tre löner för att kunna göra en beräkning!");
-                        Console.BackgroundColor = ConsoleColor.Black;
-                        Console.WriteLine();
-                        Restart();
-                    }
-                    //Beräkna och presentera löner
-                    else
-                    {
-                        ProcessSalaries(ref antalLoner);
-                        break;
-                    }
-                }
-                catch
-                {
-                    Console.WriteLine();
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FEL! Det du angav kunde inte tolkas som ett heltal");
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.WriteLine();
-                    Restart();
-                }
-            }
-                //Avsluta eller en ny beräkning
-                Console.WriteLine();//Blank rad
-                Restart();
-            }
         }
     }
 }
