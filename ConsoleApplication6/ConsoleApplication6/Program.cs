@@ -26,9 +26,9 @@ namespace ConsoleApplication4
             {
                 try
                 {
-                //Läs in lönerna och placera dem i array
+                //Läs in lönerna och placera dem i array                
                 while (loop < antalLoner)
-                {
+                {                   
                     Console.Write("Ange lön nummer " + (loop + 1) + ": ");
                     arrayLoner[loop] = Convert.ToInt32(Console.ReadLine());
                     loop++;
@@ -111,10 +111,10 @@ namespace ConsoleApplication4
                     Console.WriteLine(); //blank rad
 
                     //Kolla om antalLoner ett rimligt tal      
-                    if (antalLoner < 3)
+                    if (antalLoner <= 2)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
-                        Console.WriteLine("FEL! Du måste mata in minst två löner för att kunna göra en beräkning!");
+                        Console.WriteLine("FEL! Du måste mata in minst tre löner för att kunna göra en beräkning!");
                         Console.BackgroundColor = ConsoleColor.Black;
                         Console.WriteLine();
                         Restart();
